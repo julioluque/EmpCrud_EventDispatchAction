@@ -9,23 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.EventDispatchAction;
 import org.apache.struts.actions.LookupDispatchAction;
 
 import beans.RegForm;
 import dao.EmployeeDao;
 
-public class RegController extends LookupDispatchAction {
+public class RegController extends EventDispatchAction {
 
-	
-	@Override
-	protected Map getKeyMethodMap() {
-		
-		Map m = new HashMap();
-		m.put("register", "empsave");
-		m.put("update", "empUpdate");
-		
-		return m;
-	}
 	
 	public ActionForward empsave(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
